@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela IPCA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table>
+        <thead> <!--? tittle-->
+            <tr>
+                <th>Processo</th>
+                <th>Competência</th>
+                <th>Valor pago</th>
+                <th>data da emissão da NF</th>
+                <th>data do pagamento</th>
+                <th>prazo pagamento</th>
+                <th>Dias de atraso</th>
+                <th>IPCA Jan/23</th>
+                <th>IPCA Fev/23</th>
+                <th>IPCA Mar/23</th>
+                <th>IPCA Jan/23</th>
+                <th>IPCA Fev/23</th>
+                <th>IPCA Mar/23</th>
+                <th>Valor devido</th>
+            </tr>
+        </thead>
+        <tbody> <!--? Conteúdo-->
+            <tr>
+                <td rowspan="4"><input type="text" name="processo" id="processo"></td>
+
+                <td rowspan="4"><input type="date" name="competencia" id="competencia"></td>
+                <td rowspan="4"><input type="number" name="pago" id="pago"></td>
+                <td rowspan="4"><input type="date" name="emissao" id="emissao"></td>
+                <td rowspan="4"><input type="date" name="pagamento" id="pagamento"></td>
+                <td rowspan="4" id="prazo"></td> <!--! Data da emissão da NF + 30 -->
+                <td rowspan="4" id="diaAtraso"></td> <!--! Data do pagamento - prazo -->
+                <td>1,0053</td>
+                <td>1,0084</td>
+                <td>1,0071</td>
+                <td>2.572,07</td> <!--! Valor * IPCA-->  <!--Celula 1 -->
+                <td>2.580,00</td> <!--! Valor * IPCA-->  <!--Celula 2 -->
+                <td>2.576,68</td> <!--! Valor * IPCA-->  <!--Celula 3 -->
+                <td rowspan="4">29,80</td> <!--! soma do valor-->
+            </tr>
+            <tr>
+                <td colspan="3">Diferença</td>
+                <td>13,56</td> <!--! celula1 - valor pago -->
+                <td>21,49</td> <!--! celula2 - valor pago -->
+                <td>18,17</td> <!--! celula3 - valor pago -->
+            </tr>
+            <tr>
+                <td colspan="3">Valor Proporcional aos dias de atraso em cada mês</td>
+                <td>4,07</td> <!--! diferença * (dias{9}/30)  -->
+                <td>21,49</td> <!--! diferença * (dias{30}/30)  -->
+                <td>4,24</td> <!--! diferença * (dias{7}/30)  -->
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>30</td>
+                <td>7</td>
+                <td colspan="3"></td>
+            </tr>
+        </tbody>
+    </table> 
+
+    <input type="button" value="TESTE" onclick="teste()">
+
+    <script src="calculo.js"></script>
+</body>
+</html>
